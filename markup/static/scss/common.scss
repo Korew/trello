@@ -1,0 +1,21 @@
+// Common styles of the project
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background-color: #0079bf;
+}
+
+.main {
+	position: relative;
+	padding-top: calc(1rem + 34px);
+	padding-bottom: 1rem;
+	min-height: 100vh;
+}
+
+.container {
+	padding: 0 1rem;
+}
