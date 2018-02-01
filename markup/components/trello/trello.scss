@@ -1,1 +1,98 @@
+.trello {
 
+  &-board {
+    padding: 1rem;
+    white-space: nowrap;
+    font-size: 0;
+  }
+
+  &-list {
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: top;
+    background: #e2e4e6;
+    border-radius: 3px;
+    width: 270px;
+    padding: .5rem;
+    padding-bottom: 42px;
+    position: relative;
+    overflow: hidden;
+    margin-right: .625rem;
+
+    &-header {
+      margin-bottom: .5rem;
+      position: relative;
+
+      .title {
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .menu {
+        position: absolute;
+        top: -4px;
+        right: -4px;
+        font-size: 0;
+
+        &-toggler {
+          width: 27px;
+          height: 26px;
+          cursor: pointer;
+          border-radius: 3px;
+          position: relative;
+          
+          &:hover {
+            background: #cdd2d4;
+          }
+
+
+          span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 12px;
+            color: #666;
+          }
+        }
+      }
+    }
+
+    &-add {
+      display: inline-block;
+      background: rgba(0,0,0,.12);
+      cursor: pointer;
+      color: rgba(#fff, .7);
+      font-size: 1rem;
+      text-decoration: none;
+      width: 270px;
+      padding: 4px;
+      border-radius: 3px;
+      padding: .75rem .5rem;
+      transition: background 85ms;
+      font-size: 14px;
+
+      &:hover {
+        background: rgba(0,0,0,.3);
+      }
+    }
+
+    .add-card {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      padding: .5rem;
+      text-decoration: none;
+      font-size: 14px;
+      color: #838c91;
+      transition: background 85ms, color 85ms;
+
+      &:hover {
+        text-decoration: underline;
+        color: #4d4d4d;
+        background-color: #cdd2d4;
+      }
+    }
+  }
+}
