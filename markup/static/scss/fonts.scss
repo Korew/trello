@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'trello';
-  src:  url('../fonts/trello.eot?4cr3iv');
-  src:  url('../fonts/trello.eot?4cr3iv#iefix') format('embedded-opentype'),
-    url('../fonts/trello.ttf?4cr3iv') format('truetype'),
-    url('../fonts/trello.woff?4cr3iv') format('woff'),
-    url('../fonts/trello.svg?4cr3iv#trello') format('svg');
+  src:  url('../fonts/trello.eot?3wawwk');
+  src:  url('../fonts/trello.eot?3wawwk#iefix') format('embedded-opentype'),
+    url('../fonts/trello.ttf?3wawwk') format('truetype'),
+    url('../fonts/trello.woff?3wawwk') format('woff'),
+    url('../fonts/trello.svg?3wawwk#trello') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-dots-three-horizontal:before {
+.icon-edit:before {
   content: "\e900";
+}
+.icon-dots-three-horizontal:before {
+  content: "\e901";
 }
