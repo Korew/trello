@@ -108,7 +108,11 @@
         position: relative;
 
         &:hover {
+            background-color: #edeff0;
+            border-bottom-color: #d6dadc;
+
             .edit {
+                background-color: #edeff0;
                 opacity: 1;
             }
         }
@@ -123,6 +127,7 @@
             color: #999;
             border-radius: 3px;
             opacity: 0;
+
 
             &:hover {
                 background-color: #d6dadc;
@@ -142,6 +147,8 @@
         &-inner {
             padding: 8px 6px;
             font-size: 14px;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
   }
