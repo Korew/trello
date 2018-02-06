@@ -1,12 +1,16 @@
 'use strict';
 
+function dragenter(e) {
+  console.log('entered ');
+}
+
 function dragstart(e) {
   let t = e.target;
   if (t.draggable != true) {return;}
   t.classList.add('target');
   // var newEl = event.target.cloneNode(true);
 
-  // document.addEventListener('dragenter', dragenter);
+  document.addEventListener('dragenter', dragenter);
 }
 
 function drag(e) {
@@ -22,9 +26,7 @@ function dragend(e) {
   t.classList.remove('target');
 }
 
-// function dragenter(e) {
-//   console.log('entered ' t);
-// }
+
 
 
 

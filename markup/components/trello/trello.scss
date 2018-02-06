@@ -1,5 +1,4 @@
 .trello {
-  $transition: .1s;
 
   &-board {
     padding: 1rem;
@@ -29,6 +28,10 @@
       position: relative;
       overflow: hidden;
       margin-right: .625rem;
+
+      &.target {
+        transform: rotate(2deg);
+      }
 
       .add-card {
         position: absolute;
@@ -130,7 +133,7 @@
         }
 
         &.target {
-          transform: rotate(3deg);
+          transform: rotate(2deg);
         }
 
         .edit {
