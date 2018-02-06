@@ -30,7 +30,7 @@
       margin-right: .625rem;
 
       &.target {
-        transform: rotate(2deg);
+        transform: rotate(1deg);
       }
 
       .add-card {
@@ -121,6 +121,11 @@
         min-height: 20px;
         position: relative;
         transition: transform $transition;
+        padding: 8px 6px;
+
+        &.target {
+          transform: rotate(1deg);
+        }
 
         &:hover {
             background-color: #edeff0;
@@ -132,15 +137,11 @@
             }
         }
 
-        &.target {
-          transform: rotate(2deg);
-        }
-
         &-placeholder {
-          width: 270px;
           min-height: 32px;
           border-radius: 3px;
           background-color: #C4C9CC;
+          margin-bottom: 6px;
         }
 
         .edit {
@@ -171,7 +172,6 @@
         }
 
         &-inner {
-            padding: 8px 6px;
             font-size: 14px;
             overflow: hidden;
             text-overflow: ellipsis;
