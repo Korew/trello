@@ -136,6 +136,13 @@
           transform: rotate(2deg);
         }
 
+        &-placeholder {
+          width: 270px;
+          min-height: 32px;
+          border-radius: 3px;
+          background-color: #C4C9CC;
+        }
+
         .edit {
             position: absolute;
             top: 3px;
