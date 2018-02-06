@@ -137,11 +137,22 @@
             }
         }
 
-        &-placeholder {
-          min-height: 32px;
-          border-radius: 3px;
-          background-color: #C4C9CC;
-          margin-bottom: 6px;
+        &.over {
+          margin-top: 44px;
+          position: relative;
+
+          &:before {
+            content: '';
+            position: absolute;
+            top: -38px;
+            left: 0;
+            width: 100%;
+            display: block;
+            min-height: 32px;
+            border-radius: 3px;
+            background-color: #C4C9CC;
+            margin-bottom: 6px;
+          }
         }
 
         .edit {
