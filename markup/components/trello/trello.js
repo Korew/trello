@@ -1,60 +1,66 @@
 'use strict';
 
-function dragstart(e) {
-  let t = e.target;
-  if (t.draggable != true) {return;}
-  t.classList.add('target');
+function dragstart(event) {
+    var element = event.target;
+    if (element.draggable != true) {return;}
+    
+    element.classList.add('target');
+    event.dataTransfer.setData('text/plain', element.id);
 
-  e.dataTransfer.setData('text/plain', t.id)
-
-  if (t.classList.contains('trello-cards-item')) {
-    document.addEventListener('dragenter', dragenter);
-    document.addEventListener('dragleave', dragleave);
-  }
+    if (element.classList.contains('trello-cards-item')) {
+        document.addEventListener('dragenter', dragenter);
+        document.addEventListener('dragleave', dragleave);
+    }
 }
 
-function dragenter(e) {
-  let t = e.target;
-  if (!t.classList.contains('trello-cards-item') || t.classList.contains('target')) {return;}
+function dragenter(event) {
+    var element = event.target;
+    if (!element.classList.contains('trello-cards-item') || element.classList.contains('target')) {
+        return;
+    }
 
-  t.classList.add('over');
+    element.classList.add('over');
 }
 
-function dragleave(e) {
-  let t = e.target;
-  if (!t.classList.contains('trello-cards-item') || t.classList.contains('target')) {return;}
-  t.classList.remove('over');
+function dragleave(event) {
+    var element = event.target;
+    if (!element.classList.contains('trello-cards-item') || element.classList.contains('target')) {
+        return;
+    }
+
+    element.classList.remove('over');
 }
 
-function drag(e) {
-  let t = e.target;
+function dragend(event) {
+    var element = event.target;
+    if (element.draggable != true) {
+        return;
+    }
+
+    element.classList.remove('target');
+
+    if (element.classList.contains('trello-cards-item')) {
+        document.removeEventListener('dragenter', dragenter);
+        document.removeEventListener('dragleave', dragleave);
+    }
 }
 
-function dragend(e) {
-  let t = e.target;
-  if (t.draggable != true) {return;}
-  t.classList.remove('target');
+function dragover(event) {
+    event.preventDefault();
 }
 
-function dragover(e) {
-  e.preventDefault();
+function drop(event) {
+    var element = event.target;
+    if (!element.classList.contains('trello-cards-item')) {
+        return;
+    }
+
+    element.classList.remove('over');
+    var item = document.getElementById(event.dataTransfer.getData('text'));
+    element.parentNode.insertBefore(item, element);
 }
-
-function drop(e) {
-  let t = e.target;
-  if (!t.classList.contains('trello-cards-item')) {return;}
-  t.classList.remove('over');
-
-  let item = document.getElementById(e.dataTransfer.getData('text'));
-  t.parentNode.insertBefore(item, t);
-}
-
-
-
-
 
 document.addEventListener('dragstart', dragstart);
-document.addEventListener('drag', drag);
 document.addEventListener('dragend', dragend);
 document.addEventListener('dragover', dragover);
 document.addEventListener('drop', drop);
